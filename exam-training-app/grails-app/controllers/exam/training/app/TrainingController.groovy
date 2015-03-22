@@ -7,14 +7,15 @@ import grails.plugin.springsecurity.annotation.Secured;
 @Secured(['permitAll'])
 class TrainingController {
 	
-	def prepereQuestionService
+	def trainingService
 	
 	def index(){
 		
 	}
 	
 	def start() {
-		def question = prepereQuestionService.randomQuestion()
+		def question = trainingService.randomQuestion()
+		//println question
 		[question:question]
 	}
 	

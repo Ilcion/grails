@@ -6,10 +6,10 @@
 </head>
 <body>
 	<h2>//TODO image here</h2>
-	<h3>
+	<h2>
 		${question }
-	</h3>
-	<br /> valid answers:
+	</h2>
+	<br /> <h3>Summary:</h3>
 
 	<g:each in="${question.answers}" status="i" var="answer">
 
@@ -28,25 +28,24 @@
 
 			<br />
 
-			${answer.id },
-			${answer.content },
-			${answer.isValid }
-			--
-			${answer.id.toString() in userAnswers}
-
+			id: ${answer.id },
+			content: ${answer.content },
+			valid: ${answer.isValid }
+			
 			<g:checkBox name="${answer.content }" value="${answer.isValid }"
 				checked="${answer.id.toString() in userAnswers}" disabled="true" />
+				user answer: ${answer.id.toString() in userAnswers}
+				
 		</div>
 		
 	</g:each>
-	<br /> user answers:
+	<%--<br /> user answers:
 	<g:each in="${userAnswers }">
 		<br />
 		${it }
 	</g:each>
 
-	<hr />
-	<br />
+	--%><br /><br /><hr />
 
 	<div style="padding: 50px 0px 0px 0px; width: 300px;">
 
