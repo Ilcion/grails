@@ -5,20 +5,13 @@
 <meta name="layout" content="main">
 </head>
 <body>
-	<h2>//TODO image here</h2>
 	<h3>
-		${question.content }
+		Program wspomagający nauke na egzamin prawa jazdy
 	</h3>
-	<g:form action="summary">
-		<g:hiddenField name="question" value="${question.content }" />
-		<g:each in="${question.answers }">
-			<br />
-			${it.id}, ${it.content}, ${it.isValid}
-			<g:checkBox name="userAnswers" value="${it.id}" checked="false" />
-			<g:hiddenField name="validAnswers.${it.id}.${it.content}" value="${it.isValid}" />
-		</g:each>
-		<br />
-		<g:submitButton name="Check it!" />
-	</g:form>
+	<div style="padding:50px 0px 0px 0px; "><g:link action="start" style="padding:10px 40px;
+	margin-top:50px
+	background-color:white;
+	border:2px solid grey;
+	font-size:30px">Start!</g:link>
 </body>
 </html>
