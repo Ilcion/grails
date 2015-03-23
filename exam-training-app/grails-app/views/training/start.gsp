@@ -9,6 +9,10 @@
 	<h2>
 		${question.content }
 	</h2>
+	<g:if test="${question.image}">
+		<img class="imageQuestion"
+			src="${createLink(controller:'question', action:'image', id:question.id)}" />
+	</g:if>
 	<g:form action="summary">
 		<g:hiddenField name="question" value="${question.id}" />
 		<g:each in="${question.answers }">
