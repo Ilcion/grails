@@ -1,4 +1,4 @@
-<h1>Application made in Grails 2.4.4.</h1>
+<h1>Training application made in Grails 2.4.4.</h1>
 Simple app made for learning purpose. Can by used in real-life scenario as training tool.
 
 <h2>How it works?</h2>
