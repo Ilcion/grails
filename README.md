@@ -25,7 +25,5 @@ yellow = missing valid answer<br /><br />
 <li>images as thumbnails when displayed in list view</li>
 <li>admin section</li>
 <li>better CSS styles</li>
-<li></li>
-<li></li>
 </ul>
 
