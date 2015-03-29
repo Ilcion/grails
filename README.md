@@ -1,5 +1,5 @@
 <h1>Training application made in Grails 2.4.4.</h1>
-Simple app made for learning purpose. Can by used in real-life scenario as training tool.
+Simple app made for learning purpose. Can be used in real-life scenario as training tool.
 
 <h2>How it works?</h2>
 "Questions" are stored in database. Each question can have multiple answers, content and image (image is optional). 
