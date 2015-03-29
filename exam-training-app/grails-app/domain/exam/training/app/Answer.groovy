@@ -4,6 +4,9 @@ class Answer {
 
 	String content
 	boolean isValid
+	
+	
+	
 	static belongsTo = [question: Question]
 	
 	static constraints = {
