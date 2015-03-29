@@ -2,7 +2,6 @@ package exam.training.app
 
 
 
-import grails.test.mixin.*
 import spock.lang.*
 
 @TestFor(QuestionController)

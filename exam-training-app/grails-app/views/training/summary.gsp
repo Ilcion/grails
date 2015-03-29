@@ -5,7 +5,6 @@
 <meta name="layout" content="main">
 </head>
 <body>
-	<h2>//TODO image here</h2>
 	<h2>
 		${question }
 	</h2>
