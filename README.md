@@ -23,8 +23,8 @@ yellow = missing valid answer<br /><br />
 <h2>TODO:</h2>
 <ul>
 <li>images as thumbnails when displayed in list view</li>
-<li>admin section to reorganise</li>
-<li>implement better CSS styles</li>
+<li>admin section</li>
+<li>better CSS styles</li>
 <li></li>
 <li></li>
 </ul>
