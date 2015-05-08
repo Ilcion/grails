@@ -1,6 +1,10 @@
 <%@ page import="exam.training.app.Question"%>
 
-
+<div>
+	<g:if test="${questionInstance.imageType}">
+		  <img class="imageQuestion" src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
+	</g:if>
+</div>
 
 <div
 	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'content', 'error')} required">
@@ -15,10 +19,6 @@
 <div
 	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'image', 'error')} ">
 
-	<g:if test="${questionInstance.image}">
-		  <img class="imageQuestion" src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
-	</g:if>
-
 	<label for="image"> <g:message code="question.image.label"
 			default="Image" />
 
@@ -29,7 +29,8 @@
 		your image is 80 pixels wide, it should be 100 pixels high.</div>
 </div>
 
-<%--<div
+<%-- image type is filled by system
+<div
 	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'imageType', 'error')} ">
 	<label for="imageType"> <g:message
 			code="question.imageType.label" default="Image Type" />

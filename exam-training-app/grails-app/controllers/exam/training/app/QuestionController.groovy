@@ -6,7 +6,8 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured;
 import grails.transaction.Transactional
 
-@Secured(['ROLE_ADMIN'])
+
+@Secured(['permitAll'])
 @Transactional(readOnly = true)
 class QuestionController {
 
@@ -33,7 +34,11 @@ class QuestionController {
 	//responding image
 	def image() {
 		def questionImage = Question.get(params.id)
-
+		//println questionImage
+		
+		if (questionImage) {
+			
+		}
 		response.contentType = questionImage.image
 		response.contentLength = questionImage.image.size()
 		OutputStream out = response.outputStream
@@ -57,18 +62,18 @@ class QuestionController {
 		// Get the image file from the multi-part request
 		def file = request.getFile('image')
 
-		// List of OK mime-types -> format validation
-		if (!okcontents.contains(file.getContentType())) {
+		// List of OK mime-types --> format validation
+		if (!file.empty && !okcontents.contains(file.getContentType())) {
 			flash.message = "Image must be one of: ${okcontents}"
 			respond questionInstance.errors, view:'create'
-			//render(view:'create', model:[user:user])
 			return
 		}
-
-		// Save the image and mime type
-		questionInstance.image = file.bytes
-		questionInstance.imageType = file.contentType
-		println("Image uploaded: $questionInstance.imageType")
+		if (!file.empty) {
+			// attach the image and mime type
+			questionInstance.image = file.bytes
+			questionInstance.imageType = file.contentType
+			// println("Image uploaded: $questionInstance.imageType")
+		}
 
 		//save call
 		questionInstance.save flush:true
@@ -109,7 +114,7 @@ class QuestionController {
 		//println questionInstance.image
 
 		if (!questionInstance.image) {
-			println "niema"
+			//println "niema"
 			def originalInstance = Question.get(questionInstance.id)
 			println originalInstance.id
 			println originalInstance.image

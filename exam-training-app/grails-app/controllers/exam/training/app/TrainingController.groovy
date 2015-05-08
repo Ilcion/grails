@@ -10,9 +10,11 @@ class TrainingController {
 	def index(){
 	}
 	def start() {
-		def question = trainingService.randomQuestion()
-		session.question = question
-		[question:question]
+		if (session.question) {
+			session.question = null
+		}
+		session.question = trainingService.randomQuestion()
+		[question: session.question]
 	}
 	def summary(params){
 		def userAnswers = params.userAnswers

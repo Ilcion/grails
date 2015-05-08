@@ -23,6 +23,7 @@
 				</g:link></li>
 		</ul>
 	</div>
+	${questionInstance?.image}
 	<div id="show-question" class="content scaffold-show" role="main">
 		<h1>
 			<g:message code="default.show.label" args="[entityName]" />
@@ -33,15 +34,7 @@
 			</div>
 		</g:if>
 		<ol class="property-list question">
-
-			<g:if test="${questionInstance?.content}">
-				<li class="fieldcontain"><span id="content-label"
-					class="property-label"><g:message
-							code="question.content.label" default="Content" /></span> <span
-					class="property-value" aria-labelledby="content-label"><g:fieldValue
-							bean="${questionInstance}" field="content" /></span></li>
-			</g:if>
-
+		
 			<g:if test="${questionInstance?.image}">
 				<li class="fieldcontain"><g:if test="${questionInstance.image}">
 						<img class="image"
@@ -55,6 +48,14 @@
 							code="question.imageType.label" default="Image Type" /></span> <span
 					class="property-value" aria-labelledby="imageType-label"><g:fieldValue
 							bean="${questionInstance}" field="imageType" /></span></li>
+			</g:if>
+			
+			<g:if test="${questionInstance?.content}">
+				<li class="fieldcontain"><span id="content-label"
+					class="property-label"><g:message
+							code="question.content.label" default="Content" /></span> <span
+					class="property-value" aria-labelledby="content-label"><g:fieldValue
+							bean="${questionInstance}" field="content" /></span></li>
 			</g:if>
 
 			<g:if test="${questionInstance?.answers}">

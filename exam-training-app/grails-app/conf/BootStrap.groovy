@@ -31,7 +31,7 @@ class BootStrap {
 		.addToAnswers(question1answer2)
 		.addToAnswers(question1answer3)
 		.addToAnswers(question1answer4)
-		.save()
+		.save(failOnError: true)
 
 		def question2answer1 = new Answer(content: "Answer 1", isValid: false)
 		def question2answer2 = new Answer(content: "Answer 2", isValid: true)
@@ -42,7 +42,7 @@ class BootStrap {
 		.addToAnswers(question2answer2)
 		.addToAnswers(question2answer3)
 		.addToAnswers(question2answer4)
-		.save()
+		.save(failOnError: true)
 
 		def question3answer1 = new Answer(content: "Answer 1", isValid: true)
 		def question3answer2 = new Answer(content: "Answer 2", isValid: true)
@@ -53,7 +53,7 @@ class BootStrap {
 		.addToAnswers(question3answer2)
 		.addToAnswers(question3answer3)
 		.addToAnswers(question3answer4)
-		.save()
+		.save(failOnError: true)
 
 		def question4answer1 = new Answer(content: "Answer 1", isValid: false)
 		def question4answer2 = new Answer(content: "Answer 2", isValid: true)
@@ -64,7 +64,7 @@ class BootStrap {
 		.addToAnswers(question4answer2)
 		.addToAnswers(question4answer3)
 		.addToAnswers(question4answer4)
-		.save()
+		.save(failOnError: true)
 
 
 
@@ -77,7 +77,7 @@ class BootStrap {
 		.addToAnswers(question5answer2)
 		.addToAnswers(question5answer3)
 		.addToAnswers(question5answer4)
-		.save()
+		.save(failOnError: true)
 
 		def question6answer1 = new Answer(content: "Answer 1", isValid: false)
 		def question6answer2 = new Answer(content: "Answer 2", isValid: false)
@@ -88,7 +88,7 @@ class BootStrap {
 		.addToAnswers(question6answer2)
 		.addToAnswers(question6answer3)
 		.addToAnswers(question6answer4)
-		.save()
+		.save(failOnError: true)
 
 		def question7answer1 = new Answer(content: "Answer 1", isValid: true)
 		def question7answer2 = new Answer(content: "Answer 2", isValid: false)
@@ -99,7 +99,7 @@ class BootStrap {
 		.addToAnswers(question7answer2)
 		.addToAnswers(question7answer3)
 		.addToAnswers(question7answer4)
-		.save()
+		.save(failOnError: true)
 		
 		def question8answer1 = new Answer(content: "Answer 1", isValid: true)
 		def question8answer2 = new Answer(content: "Answer 2", isValid: false)
@@ -116,7 +116,7 @@ class BootStrap {
 		.addToAnswers(question8answer5)
 		.addToAnswers(question8answer6)
 		.addToAnswers(question8answer7)
-		.save()
+		.save(failOnError: true)
 
 		def question9answer1 = new Answer(content: "Answer 1", isValid: true)
 		def question9answer2 = new Answer(content: "Answer 2", isValid: false)
@@ -133,14 +133,14 @@ class BootStrap {
 		.addToAnswers(question9answer5)
 		.addToAnswers(question9answer6)
 		.addToAnswers(question9answer7)
-		.save()
+		.save(failOnError: true)
 		
 		def question10answer1 = new Answer(content: "Answer 1", isValid: false)
 		def question10answer2 = new Answer(content: "Answer 2", isValid: true)
 		def question10 = new Question(content: "Question 10? (Answer 2)")
 		.addToAnswers(question10answer1)
 		.addToAnswers(question10answer2)
-		.save()
+		.save(failOnError: true)
 	}
 	def destroy = {
 	}
