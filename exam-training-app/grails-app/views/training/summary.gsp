@@ -2,63 +2,54 @@
 <html>
 <head>
 <title>Your question!</title>
-<meta name="layout" content="main">
+<meta name="layout" content="bootstrap">
 </head>
 <body>
-	<h2>
-		${question }
-	</h2>
-	<g:if test="${question.image}">
-		<img class="imageQuestion"
-			src="${createLink(controller:'question', action:'image', id:question.id)}" />
-	</g:if>
-	<p>Legend:</p>
-	<div style="width: 120px; height: 21px; background-color: lightgreen">
-		<p>Valid answer</p>
-	</div>
-	<div style="width: 120px; height: 21px; background-color: #FAFCA7">
-		<p>Missing answer</p>
-	</div>
-	<div style="width: 120px; height: 21px; background-color: #FF8989">
-		<p>Invalid answer</p>
-	</div>
-	<br />
-	<h3>Summary:</h3>
-	<g:each in="${question.answers}" status="i" var="answer">
-		<div
-			style="${(answer.isValid && answer.id.toString() in userAnswers) ? 'background-color:lightgreen':'' } 
-			${(answer.isValid && !(answer.id.toString() in userAnswers)) ? 'background-color:#FAFCA7':''}
-			${(!answer.isValid && (answer.id.toString() in userAnswers)) ? 'background-color:#FF8989':''}">
-			id:
-			${answer.id }, content:
-			${answer.content }, valid:
-			${
-			answer.isValid
-		}
-			<g:checkBox name="${answer.content }" value="${answer.isValid }"
-				checked="${answer.id.toString() in userAnswers}" disabled="true" />
-			user answer:
-			${answer.id.toString() in userAnswers}
+<div class="site-wrapper">
+
+		<div class="site-wrapper-inner">
+
+			<div class="cover-container">
+
+				<%--<div class="masthead clearfix">
+					<div class="inner">
+						<h3 class="masthead-brand">Podsumowanie</h3>
+						<g:render template="/navigation" />
+					</div>
+				</div>
+				
+				--%><div class="inner cover">
+					<g:if test="${question.image}">
+						<img class="image img-responsive center-block"
+							src="${createLink(controller:'question', action:'image', id:question.id)}" />
+					</g:if>
+					<h2>Podsumowanie:</h2>
+					<h3 class="cover-heading text-left">
+						${question.content }
+					</h3>
+						<ul class="list-unstyled list-group text-left">
+							<g:each in="${question.answers}" status="i" var="answer">
+								<li class="list-group-item question" style="${(answer.isValid && answer.id.toString() in userAnswers) ? 'background-color:lightgreen':'' } 
+									${(answer.isValid && !(answer.id.toString() in userAnswers)) ? 'background-color:#FAFCA7':''}
+									${(!answer.isValid && (answer.id.toString() in userAnswers)) ? 'background-color:#FF8989':''}">
+									 
+									
+									<g:checkBox name="${answer.content }" value="${answer.isValid }"	checked="${answer.id.toString() in userAnswers}" disabled="true" />
+									${answer.content }<%--
+									user answer:
+									${answer.id.toString() in userAnswers}
+								--%></li>
+							</g:each>
+						</ul>	
+						<br />
+						<g:link controller="training" action="start" class="btn btn-lg btn-danger">Zakończ</g:link>
+						<g:link controller="training" action="start" class="btn btn-lg btn-success">Następne pytanie</g:link>
+
+				<%--<g:render template="/footer" />
+			--%></div>
+
 		</div>
-	</g:each>
-	<br />
-	<br />
-	<hr />
-	<div style="padding: 50px 0px 0px 0px; width: 300px;">
-		<g:link action="start"
-			style="padding:10px 40px;
-	margin-top:50px
-	background-color:white;
-	border:2px solid grey;
-	font-size:30px">Try next!</g:link>
-	</div>
-	<div style="padding: 50px 0px 0px 0px; width: 300px;">
-		<g:link action="index"
-			style="padding:10px 40px;
-	margin-top:50px
-	background-color:white;
-	border:2px solid grey;
-	font-size:30px">Finish training!</g:link>
+
 	</div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+img.image {
+  width: 40.0em;
+  height: 30.0em;
+}img.image_small {
+  width: 4em;
+  height: 5em;
+}
+img.image_tiny {
+  width: 2em;
+  height: 2.5em;
+}
+#btnLogout {
+  background:none;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  background-color: transparent;
+  padding: 10px 0px;
+  border-bottom: 2px solid transparent;
+}
+
+
+#btnLogout:hover,
+#btnLogout:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+  
+}
+.question {
+	color:#fff;
+	background-color:#a9a9a9; 
+	border-color:#333;
+	
+}
