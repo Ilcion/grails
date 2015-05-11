@@ -42,7 +42,7 @@
 							</g:each>
 						</ul>	
 						<br />
-						<g:link controller="training" action="start" class="btn btn-lg btn-danger">Zakończ</g:link>
+						<g:link uri="/" class="btn btn-lg btn-danger">Zakończ</g:link>
 						<g:link controller="training" action="start" class="btn btn-lg btn-success">Następne pytanie</g:link>
 
 				<%--<g:render template="/footer" />

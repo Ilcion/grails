@@ -2,14 +2,14 @@
 	<ul class="nav masthead-nav">
 		<li
 			<g:if test="${request.getRequestURI().matches("/exam-training-app/")}">
-      			class="active"
+      			 class="active"
    			</g:if>
    		>
 			<g:link uri="/">Home</g:link>
 		</li>
 		<sec:access expression="hasRole('ROLE_ADMIN')">
 		<li
-			<g:if test="${request.getRequestURI().startsWith(request.contextPath + "/question")}">
+			<g:if test="${request.getRequestURI().startsWith(request.contextPath + "/grails/question")}">
       			class="active"
    			</g:if>
    		>
@@ -18,7 +18,7 @@
 		</sec:access>
 		<sec:access expression="hasRole('ROLE_ADMIN')">
 		<li
-			<g:if test="${request.getRequestURI().startsWith(request.contextPath + "/user")}">
+			<g:if test="${request.getRequestURI().startsWith("/exam-training-app/grails/user")}">
       			class="active"
    			</g:if>
    		>

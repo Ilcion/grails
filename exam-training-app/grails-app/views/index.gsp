@@ -31,7 +31,7 @@
 					</p>
 				</div>
 
-				<g:render template="footer" />
+				<g:render template="/footer" />
 			</div>
 
 		</div>

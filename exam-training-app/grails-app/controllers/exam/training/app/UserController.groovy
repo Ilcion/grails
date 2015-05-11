@@ -3,8 +3,10 @@ package exam.training.app
 
 
 import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured;
 import grails.transaction.Transactional
 
+@Secured(['ROLE_ADMIN'])
 @Transactional(readOnly = true)
 class UserController {
 
@@ -34,8 +36,13 @@ class UserController {
             respond userInstance.errors, view:'create'
             return
         }
-
+  
         userInstance.save flush:true
+		
+		def userAccount = User.findByUsername(userInstance.username)
+		def roleAdmin = Role.findByAuthority("ROLE_ADMIN")
+		
+		UserRole.create userAccount, roleAdmin, true
 
         request.withFormat {
             form multipartForm {
@@ -80,7 +87,9 @@ class UserController {
             notFound()
             return
         }
-
+		
+		UserRole.remove(userInstance, Role.findByAuthority("ROLE_ADMIN"), true)
+		
         userInstance.delete flush:true
 
         request.withFormat {

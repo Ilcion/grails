@@ -7,7 +7,7 @@ import grails.plugin.springsecurity.annotation.Secured;
 import grails.transaction.Transactional
 
 
-@Secured(['permitAll'])
+@Secured(['ROLE_ADMIN'])
 @Transactional(readOnly = true)
 class QuestionController {
 
@@ -106,52 +106,27 @@ class QuestionController {
 			return
 		}
 
-
-		//println questionInstance.image
-
 		// Implementation based on "Simple avatar upload" tutorial
 		// Get the image file from the multi-part request
-		//println questionInstance.image
+		def file = request.getFile('image')
 
-		if (!questionInstance.image) {
-			//println "niema"
-			def originalInstance = Question.get(questionInstance.id)
-			println originalInstance.id
-			println originalInstance.image
-			println originalInstance.imageType
-			//questionInstance.image[] = originalInstance.image[]
-			//questionInstance.imageType = originalInstance.imageType
+		// List of OK mime-types --> format validation
+		if (!file.empty && !okcontents.contains(file.getContentType())) {
+			flash.message = "Image must be one of: ${okcontents}"
+			respond questionInstance.errors, view:'create'
+			return
 		}
-//
-//		def file = request.getFile('image')
-		println questionInstance.image
+		if (!file.empty) {
+			// attach the image and mime type
+			questionInstance.image = file.bytes
+			questionInstance.imageType = file.contentType
+			// println("Image uploaded: $questionInstance.imageType")
+		}
 
-		
-		
-		
-		
-//		
-//		// List of OK mime-types -> format validation
-//		if (!okcontents.contains(file.getContentType())) {
-//			flash.message = "Image must be one of: ${okcontents}"
-//			respond questionInstance.errors, view:'edit'
-//			//render(view:'create', model:[user:user])
-//			return
-//		}
-//
-//		
-//		
-//		
-//		
-//		
-//		
-//		// Save the image and mime type
-//		questionInstance.image = file.bytes
-//		questionInstance.imageType = file.contentType
-//		println("Image uploaded: $questionInstance.imageType")
-
-
+		//save call
 		questionInstance.save flush:true
+
+
 
 		request.withFormat {
 			form multipartForm {
