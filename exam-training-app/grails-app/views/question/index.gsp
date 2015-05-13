@@ -24,7 +24,7 @@
 					</div>
 	
 					<div class="inner cover">
-						<h1 class="cover-heading">Lista użytkowników:</h1>
+						<h1 class="cover-heading">Lista pytań w bazie:</h1>
 											
 					
 					<div id="list-question" class="content scaffold-list" role="main">
@@ -38,9 +38,9 @@
 							<thead>
 								<tr>
 									<g:sortableColumn property="image"
-										title="${message(code: 'question.image.label', default: 'Obrazek')}" />
+										title="${message(code: 'question.image.label', default: 'Miniaturka')}"	/>
 									<g:sortableColumn property="content"
-										title="${message(code: 'question.content.label', default: 'Pytanie')}" />
+										title="${message(code: 'question.content.label', default: 'Pytania')}" />
 								</tr>
 							</thead>
 							<tbody>
@@ -62,6 +62,13 @@
 						</table>
 						
 							<g:paginate total="${questionInstanceCount ?: 0}" />
+							
+							
+								<fieldset class="buttons">
+									<g:link class="btn btn-primary" action="create" resource="${questionInstance}">
+										<g:message code="default.button.create.label" default="Create" />
+									</g:link>
+								</fieldset>
 						
 					</div>
 					</div>

@@ -1,6 +1,6 @@
 img.image {
-  width: 40.0em;
-  height: 30.0em;
+  width: 400px;
+  height: auto;
 }img.image_small {
   width: 4em;
   height: 3em;
