@@ -34,6 +34,13 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
+textarea, input, select{
+	color:black;
+}
+table{
+	text-align:justify;
+	
+}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -135,11 +142,11 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
   }
   .mastfoot {
-    position: fixed;
+    position: inherit;
     bottom: 0;
   }
   /* Start the vertical centering */
