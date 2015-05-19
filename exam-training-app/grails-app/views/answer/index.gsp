@@ -37,11 +37,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="content" title="${message(code: 'answer.content.label', default: 'Content')}" />
+						<g:sortableColumn property="content" title="${message(code: 'answer.content.label', default: 'Odpowiedź')}" />
 					
-						<g:sortableColumn property="isValid" title="${message(code: 'answer.isValid.label', default: 'Is Valid')}" />
+						<g:sortableColumn property="isValid" title="${message(code: 'answer.isValid.label', default: 'Poprawna')}" />
 					
-						<th><g:message code="answer.question.label" default="Question" /></th>
+						<th><g:message code="answer.question.label" default="Pytanie" /></th>
 					
 					</tr>
 				</thead>

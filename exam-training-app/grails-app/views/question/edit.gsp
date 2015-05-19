@@ -1,30 +1,30 @@
-<%@ page import="exam.training.app.Question" %>
+<%@ page import="exam.training.app.Question"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="bootstrap">
-		<g:set var="entityName" value="${message(code: 'question.label', default: 'Pytanie')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
-	</head>
-	<body>
+<head>
+<meta name="layout" content="bootstrap">
+<g:set var="entityName"
+	value="${message(code: 'question.label', default: 'Question')}" />
+<title><g:message code="default.list.label" args="[entityName]" /></title>
+</head>
+<body>
 	<div class="site-wrapper">
-
-		<div class="site-wrapper-inner">
-
-			<div class="cover-container">
-				
-				<div class="masthead clearfix">
-					<div class="inner">
-						<g:render template="/header" />
-						
-						<g:render template="/navigation" />
-					</div>
-				</div>
-
-				<div class="inner cover">
-				
+	
+			<div class="site-wrapper-inner">
+	
+				<div class="cover-container">
 					
-						<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+					<div class="masthead clearfix">
+						<div class="inner">
+							<g:render template="/header" />
+							
+							<g:render template="/navigation" />
+						</div>
+					</div>
+	
+					<div class="inner cover">
+						<h1 class="cover-heading">Edytuj Pytanie</h1>
+											
 						<g:if test="${flash.message}">
 						<div class="message" role="status">${flash.message}</div>
 						</g:if>
@@ -43,16 +43,16 @@
 							<fieldset class="buttons">
 								<g:actionSubmit class="btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 							</fieldset>
-						</g:form>
-					
+						</g:form>	
+						</div>
+					</div>
+	
+					<g:render template="/footer" />
 				</div>
-
-				<g:render template="/footer" />
+	
 			</div>
-
+	
 		</div>
-
-	</div>
-		
+	
 	</body>
 </html>

@@ -1,11 +1,9 @@
-
 <%@ page import="exam.training.app.Question"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="layout" content="bootstrap">
-<g:set var="entityName"
-	value="${message(code: 'question.label', default: 'Question')}" />
+<g:set var="entityName" value="${message(code: 'question.label', default: 'Pytania')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -34,11 +32,11 @@
 								${flash.message}
 							</div>
 						</g:if>
-						<table class="text-left">
+						<table class="text-left table table-hover">
 							<thead>
 								<tr>
 									<g:sortableColumn property="image"
-										title="${message(code: 'question.image.label', default: 'Miniaturka')}"	/>
+										title="${message(code: 'question.image.label', default: ' ')}"	/>
 									<g:sortableColumn property="content"
 										title="${message(code: 'question.content.label', default: 'Pytania')}" />
 								</tr>

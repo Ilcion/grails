@@ -39,9 +39,11 @@ textarea, input, select{
 }
 table{
 	text-align:justify;
+border:0;	
+}
+.table{
 	
 }
-
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -65,7 +67,17 @@ table{
   padding: 30px;
 }
 
-
+/*.property-label{
+	color:black;
+	background:white;
+	border:1px solid black;
+	border-radius:5px;
+	padding:5px;
+	margin:0px 0 0 0;
+}*/
+.property-value{
+	display:block;
+}
 /*
  * Header
  */
@@ -166,5 +178,6 @@ table{
   .mastfoot,
   .cover-container {
     width: 700px;
+    margin:0px auto;
   }
 }

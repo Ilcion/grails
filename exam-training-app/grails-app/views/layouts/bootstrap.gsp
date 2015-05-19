@@ -11,7 +11,7 @@
     
     <!--  TODO <link rel="icon" href="../../favicon.ico"> -->
     
-    <title><g:layoutTitle default="Nauka przepisów"/></title>
+    <title><g:layoutTitle default="Nauka_przepisów"/></title>
 
     <!-- Bootstrap -->
     <!-- Assets compiled into one file application.css for better performance -->

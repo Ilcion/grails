@@ -4,6 +4,7 @@ img.image {
 }img.image_small {
   width: 4em;
   height: 3em;
+  margin:5px;
 }
 img.image_tiny {
   width: 2em;
