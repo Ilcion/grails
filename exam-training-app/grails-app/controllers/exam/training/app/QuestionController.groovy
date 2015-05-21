@@ -30,7 +30,7 @@ class QuestionController {
 	def create() {
 		respond new Question(params)
 	}
-
+	@Secured(['permitAll'])
 	//responding image
 	def image() {
 		def questionImage = Question.get(params.id)

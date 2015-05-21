@@ -4,7 +4,6 @@ img.image {
 }img.image_small {
   width: 4em;
   height: 3em;
-  margin:5px;
 }
 img.image_tiny {
   width: 2em;
@@ -32,7 +31,7 @@ img.image_tiny {
 }
 .question {
 	color:#fff;
-	background-color:#a9a9a9; 
+	background-color:rgba(169, 169, 169, 0.09); 
 	border-color:#333;
 	
 }

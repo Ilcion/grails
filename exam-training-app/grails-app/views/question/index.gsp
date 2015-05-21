@@ -32,7 +32,7 @@
 								${flash.message}
 							</div>
 						</g:if>
-						<table class="text-left table table-hover">
+						<table class="text-left table">
 							<thead>
 								<tr>
 									<g:sortableColumn property="image"

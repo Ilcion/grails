@@ -54,8 +54,8 @@
 				</g:if>
 			<g:form url="[resource:answerInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="btn btn-primary" action="edit" resource="${answerInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="btn btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="btn btn-primary" action="edit" resource="${answerInstance}"><g:message code="default.button.edit.label" default="Edytuj" /></g:link>
+					<g:actionSubmit class="btn btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Usuń')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Jesteś tego pewny?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

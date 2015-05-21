@@ -13,7 +13,7 @@ class TrainingController {
 		}
 		session.question = trainingService.randomQuestion()
 
-		//session.question = Question.get(1)
+		//session.question = Question.get(16)
 		[question: session.question]
 	}
 	def summary(params){

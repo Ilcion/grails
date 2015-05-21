@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="bootstrap">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+		<g:set var="entityName" value="${message(code: 'user.label', default: 'Użytkownika')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -29,17 +29,22 @@
 							<g:if test="${flash.message}">
 							<div class="message" role="status">${flash.message}</div>
 							</g:if>
-							<ol class="property-list user">
-							
-								<g:if test="${userInstance?.username}">
-								<li class="fieldcontain">
-									<span id="username-label" class="property-label"><g:message code="user.username.label" default="Username" /></span>
-									
+							<g:if test="${userInstance?.username}">
+							<table class="text-left table">
+								<thead>
+								<tr>
+										<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Użytkownik')}" />
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<td>
 										<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${userInstance}" field="username"/></span>
-									
-								</li>
+								</td>
+								</tr>
+								</tbody>
+							</table>
 								</g:if>
-							</ol>
 							<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
 								<fieldset class="buttons">
 									<g:link class="btn btn-success" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

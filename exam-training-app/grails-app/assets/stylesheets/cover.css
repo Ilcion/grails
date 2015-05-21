@@ -41,8 +41,13 @@ table{
 	text-align:justify;
 border:0;	
 }
-.table{
+thead{
+	font-size:17px;
+}
+.property-label{
 	
+	font-size:17px;
+	text-decoration:underline;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {

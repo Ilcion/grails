@@ -9,8 +9,7 @@
 					src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
 			</g:if>
 </div>
-<div
-	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'Obrazek', 'error')} ">
+<div class="form-group" ${hasErrors(bean: questionInstance, field: 'Obrazek', 'error')} ">
 
 	<label for="image"> <g:message code="question.image.label"
 			default="Obrazek" />
@@ -18,12 +17,11 @@
 	</label> <input type="file" id="image" name="image" />
 
 </div>
-<div
-	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'Tresc pytania', 'error')} required">
+<div class="form-group" ${hasErrors(bean: questionInstance, field: 'Tresc pytania', 'error')} required">
 	<label for="content"> <g:message code="question.content.label"
 			default="Treść pytania:" /> <span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="content" cols="100" rows="3" maxlength="1000"
+	<g:textArea name="content" cols="30" rows="1" maxlength="1000"
 		required="" value="${questionInstance?.content}" />
 
 </div>
@@ -44,8 +42,7 @@
 
 
 --%>
-<div
-	class="fieldcontain ${hasErrors(bean: questionInstance, field: 'answers', 'error')} ">
+<div class="form-group" ${hasErrors(bean: questionInstance, field: 'answers', 'error')} ">
 	<label for="answers"> <g:message code="question.answers.label"
 			default="Odpowiedzi:" />
 	</label>

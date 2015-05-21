@@ -31,9 +31,8 @@
 								<div class="message" role="status">${flash.message}</div>
 							</g:if>
 							
-							<g:link class="create btn btn-primary" action="create">Nowy</g:link>
 							
-							<table class="text-left">
+							<table class="text-left table">
 								<thead>
 									<tr>
 										<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Użytkownik')}" />
@@ -47,9 +46,12 @@
 									</g:each>
 								</tbody>
 							</table>
-							<div class="pagination">
-								<g:paginate total="${userInstanceCount ?: 0}" />
-							</div>
+							<g:paginate total="${questionInstanceCount ?: 0}" />
+													
+								<fieldset class="buttons">
+									<g:link class="create btn btn-primary" action="create">Nowy</g:link>
+								</fieldset>
+							
 					</div>
 	
 					<g:render template="/footer" />

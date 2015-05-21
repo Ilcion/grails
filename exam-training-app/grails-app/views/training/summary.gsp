@@ -29,9 +29,9 @@
 					</h3>
 						<ul class="list-unstyled list-group text-left">
 							<g:each in="${question.answers}" status="i" var="answer">
-								<li class="list-group-item question" style="${(answer.isValid && answer.id.toString() in userAnswers) ? 'background-color:lightgreen':'' } 
-									${(answer.isValid && !(answer.id.toString() in userAnswers)) ? 'background-color:#FAFCA7':''}
-									${(!answer.isValid && (answer.id.toString() in userAnswers)) ? 'background-color:#FF8989':''}">
+								<li class="list-group-item question" style="${(answer.isValid && answer.id in userAnswers) ? 'background-color:rgb(37, 134, 37)':'' } 
+									${(answer.isValid && !(answer.id in userAnswers)) ? 'background-color:#B0771E':''}
+									${(!answer.isValid && (answer.id in userAnswers)) ? 'background-color:#8B2828':''}">
 									 
 									
 									<g:checkBox name="${answer.content }" value="${answer.isValid }"	checked="${answer.id.toString() in userAnswers}" disabled="true" />
