@@ -32,10 +32,10 @@
 						</g:if>
 		
 						<label for='username' class="sr-only"><g:message code="springSecurity.login.username.label" />:</label>
-						<input type='text'	name='j_username' id='username' class="form-control" placeholder="Username" required autofocus /> 
+						<input type='text'	name='j_username' id='username' class="form-control" placeholder="Użytkownik" required autofocus /> 
 						
 						<label for='password' class="sr-only"><g:message code="springSecurity.login.password.label" />:</label> 
-						<input type='password' name='j_password' id='password' class="form-control" placeholder="Password" required />
+						<input type='password' name='j_password' id='password' class="form-control" placeholder="Hasło" required />
 		
 						<div class="checkbox">
 							<label>
@@ -44,7 +44,7 @@
 							</label>
 						</div>
 						
-						<button class="btn btn-lg btn-primary btn-block" type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'>Login</button>
+						<button class="btn btn-lg btn-primary btn-block" type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'>Zaloguj</button>
 					</form>
 				</div>
 

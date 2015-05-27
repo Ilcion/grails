@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Your question!</title>
+<title>Test!</title>
 <meta name="layout" content="bootstrap">
 </head>
 <body>
@@ -21,7 +21,7 @@
 				<div class="inner cover">
 					<g:if test="${question.image}">
 						<img class="image img-responsive center-block"
-							src="${createLink(controller:'question', action:'image', id:question.id)}" />
+							src="${createLink(controller:'question', action:'image', id:question.id)}" alt=" " />
 					</g:if>
 					<h3 class="cover-heading text-left">
 						${question.content }
