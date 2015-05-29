@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta name="layout" content="bootstrap">
-<g:set var="entityName" value="${message(code: 'question.label', default: 'Pytania')}" />
+<g:set var="entityName" value="${message(code: 'question.label', default: 'Pytań')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -46,7 +46,7 @@
 									var="questionInstance">
 									<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 										<td><g:if test="${questionInstance.image}">
-												<img class="image_small"
+												<img class="image_small" alt="-"
 													src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
 											</g:if>
 										</td>

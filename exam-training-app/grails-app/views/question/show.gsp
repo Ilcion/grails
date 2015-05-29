@@ -5,7 +5,7 @@
 <head>
 <meta name="layout" content="bootstrap">
 <g:set var="entityName"
-	value="${message(code: 'question.label', default: 'Question')}" />
+	value="${message(code: 'question.label', default: 'Pytanie')}" />
 <title><g:message code="default.show.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -35,7 +35,7 @@
 							<g:if test="${questionInstance?.image}">
 								<li class="fieldcontain"><g:if
 										test="${questionInstance.image}">
-										<img class="image"
+										<img class="image" alt="-"
 											src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
 									</g:if></li>
 							</g:if>
@@ -74,11 +74,11 @@
 						<fieldset class="buttons">
 							<g:link class="btn btn-primary" action="edit"
 								resource="${questionInstance}">
-								<g:message code="default.button.edit.label" default="Edit" />
+								<g:message code="default.button.edit.label" default="Edycja" />
 							</g:link>
 							<g:actionSubmit class="btn btn-danger" action="delete"
-								value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-								onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+								value="${message(code: 'default.button.delete.label', default: 'Usuń')}"
+								onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Jesteś pewny?')}');" />
 						</fieldset>
 					</g:form>
 
