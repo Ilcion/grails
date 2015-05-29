@@ -8,10 +8,10 @@
 	</g:if>
 </div>
 <div class="control-group"${hasErrors(bean: questionInstance, field: 'Obrazek', 'error')} ">
-	<label for="image"> <g:message code="question.image.label" default="Obrazek" />
+	<label for="image" class="control-label"> <g:message code="question.image.label" default="Obrazek" />
 	</label>
-	 <div class="styl-diva-inputa"> 
-	<input type="file" id="image" name="image" />
+	 <div class="controls"> 
+	<input type="file" class="input-file" id="image" name="image" />
 	</div>
 </div>
 <div class="control-group"
