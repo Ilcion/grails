@@ -18,15 +18,28 @@
 					</div>
 				</div>
 				
-				--%><div class="inner cover">
+				--%>
+					
+				
+				
+				<div class="inner cover">
+					<ul class="list-unstyled list-group text-left">
+						<li class="list-group-item question" style="background-color:rgb(37, 134, 37)">Odpowiedź poprawna</li>
+						<li class="list-group-item question" style="background-color:#B0771E">Brakująca odpowiedź poprawna</li>
+						<li class="list-group-item question" style="background-color:#8B2828">Odpowiedź niepoprawna</li>
+					</ul>
+					
 					<g:if test="${question.image}">
 						<img class="image img-responsive center-block"
 							src="${createLink(controller:'question', action:'image', id:question.id)}" />
 					</g:if>
+					
 					<h2>Podsumowanie:</h2>
+					
 					<h3 class="cover-heading text-left">
 						${question.content }
 					</h3>
+					
 						<ul class="list-unstyled list-group text-left">
 							<g:each in="${question.answers}" status="i" var="answer">
 								<li class="list-group-item question" style="${(answer.isValid && answer.id.toString() in userAnswers) ? 'background-color:rgb(37, 134, 37)':'' } 

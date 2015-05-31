@@ -35,14 +35,14 @@
 							</g:eachError>
 						</ul>
 						</g:hasErrors>
-						<g:form url="[resource:questionInstance, action:'update']" method="PUT"  enctype="multipart/form-data">
+						<g:form class="form-horizontal" url="[resource:questionInstance, action:'update']" method="PUT"  enctype="multipart/form-data">
 							<g:hiddenField name="version" value="${questionInstance?.version}" />
-							<fieldset class="form">
+							
 								<g:render template="form"/>
-							</fieldset>
-							<fieldset class="buttons">
+							
+							
 								<g:actionSubmit class="btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Zaktualizuj')}" />
-							</fieldset>
+							
 						</g:form>	
 						</div>
 					</div>

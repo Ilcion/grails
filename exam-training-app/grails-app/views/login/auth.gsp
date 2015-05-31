@@ -37,7 +37,7 @@
 						<label for='password' class="sr-only"><g:message code="springSecurity.login.password.label" />:</label> 
 						<input type='password' name='j_password' id='password' class="form-control" placeholder="Hasło" required />
 		
-						<div class="checkbox">
+						<div class="checkbox pull-left">
 							<label>
 								<input type='checkbox' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if> /> 
 								<g:message code="springSecurity.login.remember.me.label" />
