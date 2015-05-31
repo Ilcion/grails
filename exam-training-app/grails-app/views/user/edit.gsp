@@ -42,16 +42,12 @@
 								</g:eachError>
 							</ul>
 						</g:hasErrors>
-						<g:form url="[resource:userInstance, action:'update']"
+						<g:form class="form-horizontal" url="[resource:userInstance, action:'update']"
 							method="PUT">
 							<g:hiddenField name="version" value="${userInstance?.version}" />
-							<fieldset class="form">
 								<g:render template="form" />
-							</fieldset>
-							<fieldset class="buttons">
 								<g:actionSubmit class="btn btn-primary" action="update"
 									value="${message(code: 'default.button.update.label', default: 'Update')}" />
-							</fieldset>
 						</g:form>
 					</div>
 				</div>

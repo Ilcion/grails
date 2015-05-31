@@ -37,13 +37,9 @@
 								</g:eachError>
 							</ul>
 							</g:hasErrors>
-							<g:form url="[resource:userInstance, action:'save']"  >
-								<fieldset class="form">
+							<g:form class="form-horizontal" url="[resource:userInstance, action:'save']"  >
 									<g:render template="form"/>
-								</fieldset>
-								<fieldset class="buttons">
 									<g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Dodaj')}" />
-								</fieldset>
 							</g:form>
 						</div>
 					</div>
