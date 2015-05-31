@@ -30,48 +30,55 @@
 							${flash.message}
 						</div>
 					</g:if>
-					<ol class="list-unstyled list-group text-left">
+					
+					<g:form class="form-horizontal">
+						<g:if test="${questionInstance.image}">
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-10">
+									<img class="img-responsive" src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" alt="Obrazek" />
+								</div>
+							</div>
+						</g:if>
 						
-							<g:if test="${questionInstance?.image}">
-								<li class="fieldcontain"><g:if
-										test="${questionInstance.image}">
-										<img class="image" alt="-"
-											src="${createLink(controller:'question', action:'image', id:questionInstance.id)}" />
-									</g:if></li>
-							</g:if>
-
 						<g:if test="${questionInstance?.imageType}">
-							<li class="fieldcontain"><span id="imageType-label"
-								class="property-label"><g:message
-										code="question.imageType.label" default="Rodzaj obrazka" /></span> <span
-								class="property-value" aria-labelledby="imageType-label"><g:fieldValue
-										bean="${questionInstance}" field="imageType" /></span></li>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"><g:message code="question.imageType.label" default="Format obrazka:" /></label>
+									<div class="col-sm-10 text-left" style="padding-top: 7px;"> 
+										<g:fieldValue bean="${questionInstance}" field="imageType" class="form-control" />
+									</div>	
+								</div>
 						</g:if>
-
+						
 						<g:if test="${questionInstance?.content}">
-							<li class="fieldcontain"><span id="content-label"
-								class="property-label"><g:message
-										code="question.content.label" default="Pytanie:" /></span> <span
-								class="property-value" aria-labelledby="content-label"><g:fieldValue
-										bean="${questionInstance}" field="content" /></span></li>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"><g:message code="question.imageType.label" default="Pytanie:" /></label>
+									<div class="col-sm-10 text-left" style="padding-top: 7px;"> 
+										<g:fieldValue bean="${questionInstance}" field="content" />
+									</div>	
+								</div>
 						</g:if>
-
+						
 						<g:if test="${questionInstance?.answers}">
-							<li class="fieldcontain"><span id="answers-label"
-								class="property-label"><g:message
-										code="question.answers.label" default="Odpowiedzi:" /></span> <g:each
-									in="${questionInstance.answers}" var="a">
-									<span class="property-value" aria-labelledby="answers-label"><g:link
-											controller="answer" action="show" id="${a.id}">
-											${a?.encodeAsHTML()}
-										</g:link></span>
-								</g:each></li>
+							<div class="form-group">
+								<label class="col-sm-2 control-label"><g:message code="question.answers.label" default="Odpowiedzi:" /></label>
+								<div class="col-sm-10"> 
+									<ul class="text-left list-unstyled list-group">
+										<g:each in="${questionInstance?.answers?}" var="a">
+											<li class="list-group-item question">
+												<g:link controller="answer" action="show" id="${a.id}">
+													${a?.encodeAsHTML()}
+												</g:link>
+											</li>
+										</g:each>
+									</ul>
+								</div>	
+							</div>
 						</g:if>
-
-					</ol>
-					<g:form url="[resource:questionInstance, action:'delete']"
-						method="DELETE">
-						<fieldset class="buttons">
+					</g:form>
+					
+					<g:form url="[resource:questionInstance, action:'delete']" method="DELETE">
+						
 							<g:link class="btn btn-primary" action="edit"
 								resource="${questionInstance}">
 								<g:message code="default.button.edit.label" default="Edycja" />
@@ -79,20 +86,12 @@
 							<g:actionSubmit class="btn btn-danger" action="delete"
 								value="${message(code: 'default.button.delete.label', default: 'Usuń')}"
 								onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Jesteś pewny?')}');" />
-						</fieldset>
+						
 					</g:form>
-
 				</div>
-
 				<g:render template="/footer" />
 			</div>
-
 		</div>
-
 	</div>
-
-
-
-
 </body>
 </html>
