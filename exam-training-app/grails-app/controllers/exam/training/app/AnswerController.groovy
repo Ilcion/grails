@@ -12,10 +12,10 @@ class AnswerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+   /* def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Answer.list(params), model:[answerInstanceCount: Answer.count()]
-    }
+    }*/
 
     def show(Answer answerInstance) {
         respond answerInstance
@@ -88,7 +88,7 @@ class AnswerController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Answer.label', default: 'Answer'), answerInstance.id])
-                redirect action:"index", method:"GET"
+                redirect controller:"question", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

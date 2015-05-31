@@ -42,16 +42,12 @@
 								</g:eachError>
 							</ul>
 						</g:hasErrors>
-						<g:form class="form-horizontal" url="[resource:questionInstance, action:'save']"
+						<g:form class="form-horizontal"
+							url="[resource:questionInstance, action:'save']"
 							enctype="multipart/form-data">
-
-							
-								<g:render template="form" />
-						
-							
-								<g:submitButton name="create" class="btn btn-primary"
-									value="${message(code: 'default.button.create.label', default: 'Stwórz')}" />
-							
+							<g:render template="form" />
+							<g:submitButton name="create" class="btn btn-primary"
+								value="${message(code: 'default.button.create.label', default: 'Stwórz')}" />
 						</g:form>
 					</div>
 				</div>

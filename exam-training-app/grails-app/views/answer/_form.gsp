@@ -2,30 +2,28 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: answerInstance, field: 'Zawartość', 'error')} required">
-	<label for="content">
-		<g:message code="answer.content.label" default="Zawartość" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textArea name="content" cols="40" rows="5" maxlength="500" required="" value="${answerInstance?.content}"/>
-
+<div class="form-group ${hasErrors(bean: answerInstance, field: 'Pytanie', 'error')} required">
+	<label for="content" class="col-sm-2 control-label"><g:message code="answer.question.label" default="Pytanie:" /><span class="required-indicator">*</span></label>
+	<div  class="col-sm-10">
+		<g:select disabled id="question" name="question.id" from="${exam.training.app.Question.list()}" optionKey="id" required="" value="${answerInstance?.question?.id}" class="many-to-one"/>
+	</div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: answerInstance, field: 'Poprawna', 'error')} ">
-	<label for="isValid">
-		<g:message code="answer.isValid.label" default="Poprawna" />
-		
-	</label>
-	<g:checkBox name="isValid" value="${answerInstance?.isValid}" />
 
+<div class="form-group ${hasErrors(bean: questionInstance, field: 'Zawartość:', 'error')}">
+	<label for="content" class="col-sm-2 control-label"><g:message code="answer.content.label" default="Zawartość" /></label>
+	<div class="col-sm-10"> 
+		<g:textArea class="form-control" name="content" required="" value="${answerInstance?.content}"  />
+	</div>	
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: answerInstance, field: 'Pytanie', 'error')} required">
-	<label for="question">
-		<g:message code="answer.question.label" default="Pytanie" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="question" name="question.id" from="${exam.training.app.Question.list()}" optionKey="id" required="" value="${answerInstance?.question?.id}" class="many-to-one"/>
-
+<div class="form-group ${hasErrors(bean: questionInstance, field: 'Poprawność odpowiedzi:', 'error')} required">
+	<label for="content" class="col-sm-2 control-label"><g:message code="answer.isValid.label" default="Poprawność odpowiedzi:" /></label>
+	<div  class="col-sm-10">
+		<g:checkBox class="form-control" size="1" name="isValid" value="${answerInstance?.isValid}" />
+	</div>
 </div>
+
+
+
 
