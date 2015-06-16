@@ -101,7 +101,7 @@ class QuestionController {
 			return
 		}
 
-		if (questionInstance.hasErrors()) {
+		if (questionInstance.hasErrors()) {1
 			respond questionInstance.errors, view:'edit'
 			return
 		}

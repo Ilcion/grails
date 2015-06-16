@@ -1,4 +1,3 @@
-
 <%@ page import="exam.training.app.Answer" %>
 <!DOCTYPE html>
 <html>
@@ -59,9 +58,17 @@
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
 				<g:paginate total="${answerInstanceCount ?: 0}" />
-			</div>
 		</div>
+		</div>
+		
+
+				<g:render template="/footer" />
+			</div>
+
+		</div>
+
+	</div>
+		
 	</body>
 </html>

@@ -5,7 +5,7 @@
 <meta name="layout" content="bootstrap">
 <g:set var="entityName"
 	value="${message(code: 'question.label', default: 'Pytanie')}" />
-<title><g:message code="default.list.label" args="[entityName]" /></title>
+<title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
 	<div class="site-wrapper">
@@ -42,6 +42,7 @@
 							
 							
 								<g:actionSubmit class="btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Zaktualizuj')}" />
+								<g:actionSubmit class="btn" action="index" value="${message(code: 'default.button.back.label', default: 'Powrót')}" />
 							
 						</g:form>	
 						</div>

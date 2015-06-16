@@ -24,7 +24,7 @@
 						
 						<div id="create-user" class="content scaffold-create" role="main">
 						
-							<h1 class="cover-heading"><g:message code="default.create.label" args="[entityName]" /></h1>
+							<h1 class="cover-heading"><g:message code="default.create2.label" args="[entityName]" /></h1>
 							
 							<g:if test="${flash.message}">
 								<div class="message" role="status">${flash.message}</div>

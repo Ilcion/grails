@@ -26,7 +26,7 @@
 
 					<div id="edit-user" class="content scaffold-edit" role="main">
 						<h1>
-							<g:message code="default.edit.label" args="[entityName]" />
+							<g:message code="default.edit2.label" args="[entityName]" />
 						</h1>
 						<g:if test="${flash.message}">
 							<div class="message" role="status">

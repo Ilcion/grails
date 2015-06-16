@@ -4,7 +4,7 @@
 <meta name="layout" content="bootstrap">
 <g:set var="entityName"
 	value="${message(code: 'answer.label', default: 'Odpowiedź')}" />
-<title><g:message code="default.create.label"
+<title><g:message code="default.add2.label"
 		args="[entityName]" /></title>
 </head>
 <body>
@@ -42,7 +42,7 @@
 					<g:form class="form-horizontal"
 						url="[resource:answerInstance, action:'save']">
 						<g:render template="form" />
-						<g:submitButton name="create" class="save"
+						<g:submitButton name="create" class="save btn btn-primary"
 							value="${message(code: 'default.button.create.label', default: 'Stwórz')}" />
 					</g:form>
 				</div>

@@ -103,4 +103,9 @@ class AnswerController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+	def index(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		respond Question.list(params), model:[questionInstanceCount: Question.count()]
+	}
 }

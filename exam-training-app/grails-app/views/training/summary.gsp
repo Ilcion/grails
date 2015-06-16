@@ -23,11 +23,6 @@
 				
 				
 				<div class="inner cover">
-					<ul class="list-unstyled list-group text-left">
-						<li class="list-group-item question" style="background-color:rgb(37, 134, 37)">Odpowiedź poprawna</li>
-						<li class="list-group-item question" style="background-color:#B0771E">Brakująca odpowiedź poprawna</li>
-						<li class="list-group-item question" style="background-color:#8B2828">Odpowiedź niepoprawna</li>
-					</ul>
 					
 					<g:if test="${question.image}">
 						<img class="image img-responsive center-block"
@@ -61,6 +56,13 @@
 				<%--<g:render template="/footer" />
 			--%></div>
 
+					<h4>Legenda:</h4>
+					
+					<ul class="list-unstyled list-group text-left">
+						<li class="list-group-item question legenda" style="background-color:rgb(37, 134, 37)">Odpowiedź poprawna</li>
+						<li class="list-group-item question legenda" style="background-color:#B0771E">Brakująca odpowiedź poprawna</li>
+						<li class="list-group-item question legenda" style="background-color:#8B2828">Odpowiedź niepoprawna</li>
+					</ul>
 		</div>
 
 	</div>
